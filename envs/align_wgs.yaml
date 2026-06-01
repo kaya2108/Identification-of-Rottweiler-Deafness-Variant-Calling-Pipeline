@@ -1,0 +1,11 @@
+name: align_wgs
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - bwa
+  - samblaster
+  - samtools
