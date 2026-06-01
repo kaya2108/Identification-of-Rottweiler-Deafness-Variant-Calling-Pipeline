@@ -16,7 +16,7 @@ The pipeline successfully reproduces the pathogenic variant reported in the pape
 |---|---:|
 | All variants | ~millions |
 | PASS + missense + homozygous `(1/1)` | 3,956 |
-| + SIFT deleterious | 578 |
+| + SIFT deleterious | 257 |
 | + SIFT score = 0 + minimum 10 reads support | 41 |
 | **Target variant: LOXHD1 p.G1914A** | **Present in the final filtered set** |
 
