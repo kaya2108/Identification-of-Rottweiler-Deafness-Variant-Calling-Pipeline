@@ -1,0 +1,196 @@
+<html>
+<head>
+  <title>VEP summary</title>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load('visualization', '1', {packages: ['corechart','table']});
+  </script>
+  <script type="text/javascript">
+    
+    function init() {
+      // charts
+      var var_class_pie = drawPie('var_class_pie', 'Variant classes', google.visualization.arrayToDataTable([['Variant class','Count'],['sequence_alteration',48597],['insertion',688472],['deletion',688700],['SNV',4397570]]), null);
+var var_class_table = drawTable('var_class_table', 'Variant classes', google.visualization.arrayToDataTable([['Variant class','Count'],['sequence_alteration',48597],['insertion',688472],['deletion',688700],['SNV',4397570]]));
+
+          google.visualization.events.addListener(var_class_pie, 'select', function() {
+            var_class_table.setSelection(var_class_pie.getSelection());
+          });
+          google.visualization.events.addListener(var_class_table, 'select', function() {
+            var_class_pie.setSelection(var_class_table.getSelection());
+          });
+        var var_cons_pie = drawPie('var_cons_pie', 'Consequences (most severe)', google.visualization.arrayToDataTable([['Consequence type','Count'],['transcript_ablation',1],['splice_acceptor_variant',370],['splice_donor_variant',319],['stop_gained',325],['frameshift_variant',3000],['stop_lost',70],['start_lost',132],['inframe_insertion',554],['inframe_deletion',611],['missense_variant',20684],['protein_altering_variant',46],['splice_donor_5th_base_variant',274],['splice_region_variant',4478],['splice_donor_region_variant',863],['splice_polypyrimidine_tract_variant',4235],['stop_retained_variant',14],['synonymous_variant',21997],['coding_sequence_variant',189],['mature_miRNA_variant',12],['5_prime_UTR_variant',11212],['3_prime_UTR_variant',14794],['non_coding_transcript_exon_variant',34612],['intron_variant',2554985],['non_coding_transcript_variant',21],['upstream_gene_variant',299526],['downstream_gene_variant',242319],['intergenic_variant',2607696]]), {slices: [{color: "#ff0000"}, {color: "#ff7f50"}, {color: "#ff7f50"}, {color: "#ff0000"}, {color: "#ff69b4"}, {color: "#ff0000"}, {}, {color: "#ff69b4"}, {color: "#ff69b4"}, {color: "#ffd700"}, {}, {}, {color: "#ff7f50"}, {}, {}, {color: "#76ee00"}, {color: "#76ee00"}, {color: "#458b00"}, {}, {}, {}, {}, {color: "#02599c"}, {}, {color: "#a2b5cd"}, {color: "#a2b5cd"}, {color: "gray"}]});
+var var_cons_table = drawTable('var_cons_table', 'Consequences (most severe)', google.visualization.arrayToDataTable([['Consequence type','Count'],['transcript_ablation',1],['splice_acceptor_variant',370],['splice_donor_variant',319],['stop_gained',325],['frameshift_variant',3000],['stop_lost',70],['start_lost',132],['inframe_insertion',554],['inframe_deletion',611],['missense_variant',20684],['protein_altering_variant',46],['splice_donor_5th_base_variant',274],['splice_region_variant',4478],['splice_donor_region_variant',863],['splice_polypyrimidine_tract_variant',4235],['stop_retained_variant',14],['synonymous_variant',21997],['coding_sequence_variant',189],['mature_miRNA_variant',12],['5_prime_UTR_variant',11212],['3_prime_UTR_variant',14794],['non_coding_transcript_exon_variant',34612],['intron_variant',2554985],['non_coding_transcript_variant',21],['upstream_gene_variant',299526],['downstream_gene_variant',242319],['intergenic_variant',2607696]]));
+
+          google.visualization.events.addListener(var_cons_pie, 'select', function() {
+            var_cons_table.setSelection(var_cons_pie.getSelection());
+          });
+          google.visualization.events.addListener(var_cons_table, 'select', function() {
+            var_cons_pie.setSelection(var_cons_table.getSelection());
+          });
+        var consequences_pie = drawPie('consequences_pie', 'Consequences (all)', google.visualization.arrayToDataTable([['Consequence type','Count'],['transcript_ablation',1],['splice_acceptor_variant',724],['splice_donor_variant',561],['stop_gained',521],['frameshift_variant',5184],['stop_lost',115],['start_lost',244],['inframe_insertion',1088],['inframe_deletion',1299],['missense_variant',40439],['protein_altering_variant',83],['splice_donor_5th_base_variant',726],['splice_region_variant',12672],['splice_donor_region_variant',2125],['splice_polypyrimidine_tract_variant',18112],['start_retained_variant',11],['stop_retained_variant',36],['synonymous_variant',53996],['coding_sequence_variant',441],['mature_miRNA_variant',12],['5_prime_UTR_variant',23368],['3_prime_UTR_variant',28400],['non_coding_transcript_exon_variant',43520],['intron_variant',7223200],['non_coding_transcript_variant',797096],['upstream_gene_variant',828945],['downstream_gene_variant',784232],['intergenic_variant',2629822]]), {slices: [{color: "#ff0000"}, {color: "#ff7f50"}, {color: "#ff7f50"}, {color: "#ff0000"}, {color: "#ff69b4"}, {color: "#ff0000"}, {}, {color: "#ff69b4"}, {color: "#ff69b4"}, {color: "#ffd700"}, {}, {}, {color: "#ff7f50"}, {}, {}, {}, {color: "#76ee00"}, {color: "#76ee00"}, {color: "#458b00"}, {}, {}, {}, {}, {color: "#02599c"}, {}, {color: "#a2b5cd"}, {color: "#a2b5cd"}, {color: "gray"}]});
+var consequences_table = drawTable('consequences_table', 'Consequences (all)', google.visualization.arrayToDataTable([['Consequence type','Count'],['transcript_ablation',1],['splice_acceptor_variant',724],['splice_donor_variant',561],['stop_gained',521],['frameshift_variant',5184],['stop_lost',115],['start_lost',244],['inframe_insertion',1088],['inframe_deletion',1299],['missense_variant',40439],['protein_altering_variant',83],['splice_donor_5th_base_variant',726],['splice_region_variant',12672],['splice_donor_region_variant',2125],['splice_polypyrimidine_tract_variant',18112],['start_retained_variant',11],['stop_retained_variant',36],['synonymous_variant',53996],['coding_sequence_variant',441],['mature_miRNA_variant',12],['5_prime_UTR_variant',23368],['3_prime_UTR_variant',28400],['non_coding_transcript_exon_variant',43520],['intron_variant',7223200],['non_coding_transcript_variant',797096],['upstream_gene_variant',828945],['downstream_gene_variant',784232],['intergenic_variant',2629822]]));
+
+          google.visualization.events.addListener(consequences_pie, 'select', function() {
+            consequences_table.setSelection(consequences_pie.getSelection());
+          });
+          google.visualization.events.addListener(consequences_table, 'select', function() {
+            consequences_pie.setSelection(consequences_table.getSelection());
+          });
+        var coding_pie = drawPie('coding_pie', 'Coding consequences', google.visualization.arrayToDataTable([['Consequence type','Count'],['stop_gained',521],['frameshift_variant',5184],['stop_lost',115],['start_lost',244],['inframe_insertion',1088],['inframe_deletion',1299],['missense_variant',40439],['protein_altering_variant',83],['start_retained_variant',11],['stop_retained_variant',36],['synonymous_variant',53996],['coding_sequence_variant',441]]), {slices: [{color: "#ff0000"}, {color: "#ff69b4"}, {color: "#ff0000"}, {}, {color: "#ff69b4"}, {color: "#ff69b4"}, {color: "#ffd700"}, {}, {}, {color: "#76ee00"}, {color: "#76ee00"}, {color: "#458b00"}]});
+var coding_table = drawTable('coding_table', 'Coding consequences', google.visualization.arrayToDataTable([['Consequence type','Count'],['stop_gained',521],['frameshift_variant',5184],['stop_lost',115],['start_lost',244],['inframe_insertion',1088],['inframe_deletion',1299],['missense_variant',40439],['protein_altering_variant',83],['start_retained_variant',11],['stop_retained_variant',36],['synonymous_variant',53996],['coding_sequence_variant',441]]));
+
+          google.visualization.events.addListener(coding_pie, 'select', function() {
+            coding_table.setSelection(coding_pie.getSelection());
+          });
+          google.visualization.events.addListener(coding_table, 'select', function() {
+            coding_pie.setSelection(coding_table.getSelection());
+          });
+        var sift_pie = drawPie('sift_pie', 'SIFT summary', google.visualization.arrayToDataTable([['Prediction','Count'],['deleterious_low_confidence',3081],['deleterious',4662],['tolerated_low_confidence',6065],['tolerated',23298]]), {slices: [{}, {color: "red"}, {}, {color: "green"}]});
+var sift_table = drawTable('sift_table', 'SIFT summary', google.visualization.arrayToDataTable([['Prediction','Count'],['deleterious_low_confidence',3081],['deleterious',4662],['tolerated_low_confidence',6065],['tolerated',23298]]));
+
+          google.visualization.events.addListener(sift_pie, 'select', function() {
+            sift_table.setSelection(sift_pie.getSelection());
+          });
+          google.visualization.events.addListener(sift_table, 'select', function() {
+            sift_pie.setSelection(sift_table.getSelection());
+          });
+        var chr_bar = drawBar('chr_bar', 'Variants by chromosome', google.visualization.arrayToDataTable([['Chromosome','Count'],['1',254807],['2',190758],['3',236987],['4',201657],['5',230706],['6',167586],['7',177923],['8',226718],['9',151190],['10',165406],['11',173932],['12',172023],['13',173008],['14',163486],['15',155159],['16',160641],['17',156012],['18',145364],['19',165739],['20',117248],['21',141404],['22',149316],['23',136523],['24',116416],['25',124022],['26',113096],['27',136994],['28',107757],['29',116037],['30',103589],['31',118257],['32',125995],['33',86008],['34',116169],['35',85681],['36',79942],['37',77007],['38',79112],['AAEX03025866.1',30],['AAEX03020671.1',105],['AAEX03023381.1',16],['AAEX03025226.1',12],['AAEX03025054.1',3],['AAEX03024277.1',14],['AAEX03025586.1',28],['AAEX03024257.1',55],['AAEX03023275.1',21],['AAEX03023424.1',68],['AAEX03022329.1',27],['AAEX03024418.1',14],['AAEX03020161.1',161],['AAEX03023883.1',12],['AAEX03023760.1',31],['AAEX03022582.1',102],['AAEX03022395.1',67],['AAEX03021281.1',23],['AAEX03024821.1',7],['AAEX03024439.1',4],['AAEX03023950.1',10],['AAEX03020055.1',5],['AAEX03025743.1',2],['AAEX03023109.1',11],['AAEX03025228.1',1],['AAEX03025799.1',1],['AAEX03025101.1',30],['AAEX03024500.1',4],['AAEX03025581.1',19],['AAEX03023980.1',55],['AAEX03024828.1',28],['AAEX03025873.1',15],['AAEX03025132.1',39],['AAEX03023081.1',32],['AAEX03025665.1',12],['AAEX03023357.1',1],['AAEX03020335.1',213],['AAEX03023386.1',82],['AAEX03025686.1',5],['AAEX03021719.1',247],['AAEX03022195.1',6],['AAEX03025102.1',29],['AAEX03022083.1',117],['AAEX03023708.1',4],['AAEX03022713.1',45],['AAEX03020568.1',13],['AAEX03025000.1',31],['AAEX03023651.1',16],['AAEX03020959.1',47],['AAEX03024786.1',1],['AAEX03023755.1',20],['AAEX03023468.1',108],['AAEX03025335.1',10],['AAEX03023460.1',4],['AAEX03021599.1',54],['AAEX03022061.1',35],['AAEX03025189.1',57],['AAEX03025524.1',13],['AAEX03025803.1',28],['AAEX03022212.1',5],['AAEX03019691.1',35],['AAEX03021513.1',7],['AAEX03025416.1',18],['AAEX03025136.1',8],['AAEX03020054.1',648],['AAEX03024741.1',3],['AAEX03021070.1',573],['AAEX03022739.1',1],['AAEX03025644.1',13],['AAEX03024228.1',3],['AAEX03024022.1',19],['AAEX03025909.1',27],['AAEX03022848.1',34],['AAEX03023735.1',11],['AAEX03022031.1',265],['AAEX03024516.1',17],['AAEX03023286.1',99],['AAEX03023233.1',17],['AAEX03025151.1',27],['AAEX03021919.1',54],['AAEX03023213.1',23],['AAEX03023924.1',29],['AAEX03024581.1',9],['AAEX03019307.1',956],['AAEX03019491.1',99],['AAEX03025712.1',70],['JH373852.1',9],['JH373553.1',39],['JH373515.1',27],['JH373723.1',70],['JH373601.1',12],['JH373746.1',43],['JH373304.1',278],['JH373418.1',43],['JH373239.1',2508],['JH373843.1',34],['JH373826.1',28],['JH373251.1',2875],['JH373983.1',6],['JH374076.1',4],['JH373805.1',16],['JH373478.1',25],['JH373668.1',27],['JH373737.1',4],['JH373574.1',8],['JH374169.1',5],['JH373343.1',7],['JH373286.1',1248],['JH374032.1',68],['JH373298.1',472],['JH374073.1',15],['JH373986.1',6],['JH373970.1',89],['JH373439.1',30],['JH374111.1',2],['JH373451.1',38],['JH373754.1',38],['JH374035.1',5],['JH374150.1',3],['JH373628.1',17],['JH373380.1',46],['JH373683.1',41],['JH373639.1',96],['JH373866.1',18],['JH373498.1',12],['JH373363.1',552],['JH373545.1',3],['JH373527.1',37],['JH373813.1',15],['JH373316.1',83],['JH373373.1',99],['JH373278.1',422],['JH373240.1',2688],['JH373990.1',10],['JH374093.1',7],['JH373332.1',231],['JH373236.1',5452],['JH373456.1',2],['JH373387.1',87],['JH373475.1',58],['JH373295.1',773],['JH373885.1',16],['JH373465.1',109],['JH373749.1',20],['JH373884.1',37],['JH374157.1',11],['JH374091.1',2],['JH373787.1',16],['JH373233.1',12469],['JH373785.1',29],['JH374155.1',26],['JH373453.1',63],['JH373329.1',103],['JH373272.1',403],['JH374019.1',11],['JH373247.1',1420],['JH374180.1',18],['JH373297.1',342],['JH373414.1',34],['JH373997.1',11],['JH373477.1',129],['JH373385.1',127],['JH373311.1',412],['JH373738.1',10],['JH373708.1',6],['JH373494.1',46],['JH373922.1',95],['JH374193.1',1],['JH374107.1',1],['JH373412.1',57],['JH373427.1',5],['JH373436.1',45],['JH373341.1',32],['JH373256.1',849],['JH373858.1',127],['JH373528.1',28],['JH373583.1',61],['JH373242.1',1376],['JH373277.1',1425],['JH373758.1',9],['JH373425.1',2],['JH373319.1',185],['JH373267.1',1191],['JH374011.1',20],['JH373489.1',72],['JH373841.1',11],['JH373321.1',377],['JH373472.1',47],['JH373253.1',2713],['JH373368.1',236],['JH373493.1',22],['JH373426.1',103],['JH373859.1',2],['JH373957.1',13],['JH373437.1',24],['JH373607.1',20],['JH373932.1',15],['JH373378.1',40],['JH373599.1',13],['JH373331.1',270],['JH373496.1',7],['JH373584.1',5],['JH373585.1',70],['JH374124.1',79],['JH373255.1',2020],['JH373404.1',79],['JH374172.1',14],['JH374147.1',2],['JH373954.1',66],['JH373280.1',701],['JH373529.1',55],['JH373538.1',30],['JH373254.1',2469],['JH373473.1',40],['JH373252.1',1078],['JH373952.1',9],['JH373432.1',77],['JH374122.1',9],['JH373616.1',40],['JH374164.1',18],['JH373760.1',27],['JH373457.1',148],['JH373398.1',92],['JH373243.1',842],['JH373632.1',84],['JH373463.1',29],['JH373579.1',124],['JH373943.1',3],['JH374167.1',6],['JH373666.1',5],['JH374181.1',12],['JH373728.1',31],['JH373235.1',5290],['JH373739.1',117],['JH373288.1',683],['JH373383.1',52],['JH373296.1',878],['JH373676.1',12],['JH373351.1',164],['JH373714.1',2],['JH374072.1',1],['JH373930.1',9],['JH373638.1',52],['JH373817.1',18],['JH373392.1',1],['JH373900.1',5],['JH373377.1',40],['JH373485.1',273],['JH373715.1',11],['JH373685.1',7],['JH373504.1',64],['JH373408.1',28],['JH373438.1',28],['JH373381.1',3],['JH373258.1',1260],['JH373534.1',24],['JH373429.1',105],['JH373775.1',5],['JH373661.1',22],['JH373649.1',33],['JH373282.1',362],['JH373699.1',53],['JH374027.1',80],['JH373756.1',103],['JH374160.1',5],['JH373449.1',61],['JH373241.1',1495],['JH373461.1',50],['JH373291.1',1099],['JH373881.1',407],['JH373389.1',174],['JH373554.1',20],['JH373238.1',3436],['JH373372.1',127],['JH373397.1',187],['JH373619.1',40],['JH373600.1',137],['JH374077.1',15],['JH373733.1',15],['JH373400.1',80],['JH373324.1',48],['JH373362.1',26],['JH373336.1',73],['JH373249.1',1273],['JH374064.1',15],['JH373306.1',417],['JH373744.1',37],['JH373502.1',284],['JH373345.1',725],['JH373394.1',26],['JH373344.1',58],['MT',20],['X',145750]]), {legend: {position: "none"}});
+var chr_table = drawTable('chr_table', 'Variants by chromosome', google.visualization.arrayToDataTable([['Chromosome','Count'],['1',254807],['2',190758],['3',236987],['4',201657],['5',230706],['6',167586],['7',177923],['8',226718],['9',151190],['10',165406],['11',173932],['12',172023],['13',173008],['14',163486],['15',155159],['16',160641],['17',156012],['18',145364],['19',165739],['20',117248],['21',141404],['22',149316],['23',136523],['24',116416],['25',124022],['26',113096],['27',136994],['28',107757],['29',116037],['30',103589],['31',118257],['32',125995],['33',86008],['34',116169],['35',85681],['36',79942],['37',77007],['38',79112],['AAEX03025866.1',30],['AAEX03020671.1',105],['AAEX03023381.1',16],['AAEX03025226.1',12],['AAEX03025054.1',3],['AAEX03024277.1',14],['AAEX03025586.1',28],['AAEX03024257.1',55],['AAEX03023275.1',21],['AAEX03023424.1',68],['AAEX03022329.1',27],['AAEX03024418.1',14],['AAEX03020161.1',161],['AAEX03023883.1',12],['AAEX03023760.1',31],['AAEX03022582.1',102],['AAEX03022395.1',67],['AAEX03021281.1',23],['AAEX03024821.1',7],['AAEX03024439.1',4],['AAEX03023950.1',10],['AAEX03020055.1',5],['AAEX03025743.1',2],['AAEX03023109.1',11],['AAEX03025228.1',1],['AAEX03025799.1',1],['AAEX03025101.1',30],['AAEX03024500.1',4],['AAEX03025581.1',19],['AAEX03023980.1',55],['AAEX03024828.1',28],['AAEX03025873.1',15],['AAEX03025132.1',39],['AAEX03023081.1',32],['AAEX03025665.1',12],['AAEX03023357.1',1],['AAEX03020335.1',213],['AAEX03023386.1',82],['AAEX03025686.1',5],['AAEX03021719.1',247],['AAEX03022195.1',6],['AAEX03025102.1',29],['AAEX03022083.1',117],['AAEX03023708.1',4],['AAEX03022713.1',45],['AAEX03020568.1',13],['AAEX03025000.1',31],['AAEX03023651.1',16],['AAEX03020959.1',47],['AAEX03024786.1',1],['AAEX03023755.1',20],['AAEX03023468.1',108],['AAEX03025335.1',10],['AAEX03023460.1',4],['AAEX03021599.1',54],['AAEX03022061.1',35],['AAEX03025189.1',57],['AAEX03025524.1',13],['AAEX03025803.1',28],['AAEX03022212.1',5],['AAEX03019691.1',35],['AAEX03021513.1',7],['AAEX03025416.1',18],['AAEX03025136.1',8],['AAEX03020054.1',648],['AAEX03024741.1',3],['AAEX03021070.1',573],['AAEX03022739.1',1],['AAEX03025644.1',13],['AAEX03024228.1',3],['AAEX03024022.1',19],['AAEX03025909.1',27],['AAEX03022848.1',34],['AAEX03023735.1',11],['AAEX03022031.1',265],['AAEX03024516.1',17],['AAEX03023286.1',99],['AAEX03023233.1',17],['AAEX03025151.1',27],['AAEX03021919.1',54],['AAEX03023213.1',23],['AAEX03023924.1',29],['AAEX03024581.1',9],['AAEX03019307.1',956],['AAEX03019491.1',99],['AAEX03025712.1',70],['JH373852.1',9],['JH373553.1',39],['JH373515.1',27],['JH373723.1',70],['JH373601.1',12],['JH373746.1',43],['JH373304.1',278],['JH373418.1',43],['JH373239.1',2508],['JH373843.1',34],['JH373826.1',28],['JH373251.1',2875],['JH373983.1',6],['JH374076.1',4],['JH373805.1',16],['JH373478.1',25],['JH373668.1',27],['JH373737.1',4],['JH373574.1',8],['JH374169.1',5],['JH373343.1',7],['JH373286.1',1248],['JH374032.1',68],['JH373298.1',472],['JH374073.1',15],['JH373986.1',6],['JH373970.1',89],['JH373439.1',30],['JH374111.1',2],['JH373451.1',38],['JH373754.1',38],['JH374035.1',5],['JH374150.1',3],['JH373628.1',17],['JH373380.1',46],['JH373683.1',41],['JH373639.1',96],['JH373866.1',18],['JH373498.1',12],['JH373363.1',552],['JH373545.1',3],['JH373527.1',37],['JH373813.1',15],['JH373316.1',83],['JH373373.1',99],['JH373278.1',422],['JH373240.1',2688],['JH373990.1',10],['JH374093.1',7],['JH373332.1',231],['JH373236.1',5452],['JH373456.1',2],['JH373387.1',87],['JH373475.1',58],['JH373295.1',773],['JH373885.1',16],['JH373465.1',109],['JH373749.1',20],['JH373884.1',37],['JH374157.1',11],['JH374091.1',2],['JH373787.1',16],['JH373233.1',12469],['JH373785.1',29],['JH374155.1',26],['JH373453.1',63],['JH373329.1',103],['JH373272.1',403],['JH374019.1',11],['JH373247.1',1420],['JH374180.1',18],['JH373297.1',342],['JH373414.1',34],['JH373997.1',11],['JH373477.1',129],['JH373385.1',127],['JH373311.1',412],['JH373738.1',10],['JH373708.1',6],['JH373494.1',46],['JH373922.1',95],['JH374193.1',1],['JH374107.1',1],['JH373412.1',57],['JH373427.1',5],['JH373436.1',45],['JH373341.1',32],['JH373256.1',849],['JH373858.1',127],['JH373528.1',28],['JH373583.1',61],['JH373242.1',1376],['JH373277.1',1425],['JH373758.1',9],['JH373425.1',2],['JH373319.1',185],['JH373267.1',1191],['JH374011.1',20],['JH373489.1',72],['JH373841.1',11],['JH373321.1',377],['JH373472.1',47],['JH373253.1',2713],['JH373368.1',236],['JH373493.1',22],['JH373426.1',103],['JH373859.1',2],['JH373957.1',13],['JH373437.1',24],['JH373607.1',20],['JH373932.1',15],['JH373378.1',40],['JH373599.1',13],['JH373331.1',270],['JH373496.1',7],['JH373584.1',5],['JH373585.1',70],['JH374124.1',79],['JH373255.1',2020],['JH373404.1',79],['JH374172.1',14],['JH374147.1',2],['JH373954.1',66],['JH373280.1',701],['JH373529.1',55],['JH373538.1',30],['JH373254.1',2469],['JH373473.1',40],['JH373252.1',1078],['JH373952.1',9],['JH373432.1',77],['JH374122.1',9],['JH373616.1',40],['JH374164.1',18],['JH373760.1',27],['JH373457.1',148],['JH373398.1',92],['JH373243.1',842],['JH373632.1',84],['JH373463.1',29],['JH373579.1',124],['JH373943.1',3],['JH374167.1',6],['JH373666.1',5],['JH374181.1',12],['JH373728.1',31],['JH373235.1',5290],['JH373739.1',117],['JH373288.1',683],['JH373383.1',52],['JH373296.1',878],['JH373676.1',12],['JH373351.1',164],['JH373714.1',2],['JH374072.1',1],['JH373930.1',9],['JH373638.1',52],['JH373817.1',18],['JH373392.1',1],['JH373900.1',5],['JH373377.1',40],['JH373485.1',273],['JH373715.1',11],['JH373685.1',7],['JH373504.1',64],['JH373408.1',28],['JH373438.1',28],['JH373381.1',3],['JH373258.1',1260],['JH373534.1',24],['JH373429.1',105],['JH373775.1',5],['JH373661.1',22],['JH373649.1',33],['JH373282.1',362],['JH373699.1',53],['JH374027.1',80],['JH373756.1',103],['JH374160.1',5],['JH373449.1',61],['JH373241.1',1495],['JH373461.1',50],['JH373291.1',1099],['JH373881.1',407],['JH373389.1',174],['JH373554.1',20],['JH373238.1',3436],['JH373372.1',127],['JH373397.1',187],['JH373619.1',40],['JH373600.1',137],['JH374077.1',15],['JH373733.1',15],['JH373400.1',80],['JH373324.1',48],['JH373362.1',26],['JH373336.1',73],['JH373249.1',1273],['JH374064.1',15],['JH373306.1',417],['JH373744.1',37],['JH373502.1',284],['JH373345.1',725],['JH373394.1',26],['JH373344.1',58],['MT',20],['X',145750]]));
+
+          google.visualization.events.addListener(chr_bar, 'select', function() {
+            chr_table.setSelection(chr_bar.getSelection());
+          });
+          google.visualization.events.addListener(chr_table, 'select', function() {
+            chr_bar.setSelection(chr_table.getSelection());
+          });
+        var protein_bar = drawBar('protein_bar', 'Position in protein', google.visualization.arrayToDataTable([['Position in protein (percentile)','Count'],['00-10%',13210],['10-20%',10471],['20-30%',9907],['30-40%',9475],['40-50%',9567],['50-60%',9664],['60-70%',9563],['70-80%',10039],['80-90%',10193],['90-100%',10875]]), {hAxis: {title: "Position in protein (percentile)", textStyle: {fontSize: 10}}, legend: {position: "none"}});
+
+    }
+    
+    function drawPie(id, title, data, options) {    
+      var pie = new google.visualization.PieChart(document.getElementById(id));
+      pie.draw(data, options);
+      return pie;
+    }
+    function drawBar(id, title, data, options) {
+      var bar = new google.visualization.ColumnChart(document.getElementById(id));
+      bar.draw(data, options);
+      return bar;
+    }
+    function drawTable(id, title, data) {
+      var table = new google.visualization.Table(document.getElementById(id));
+      table.draw(data, null);
+      return table;
+    }
+    function drawLine(id, title, data, options) {
+      var line = new google.visualization.LineChart(document.getElementById(id));
+      line.draw(data, options);
+      return line;
+    }
+    function drawArea(id, title, data, options) {
+      var area = new google.visualization.AreaChart(document.getElementById(id));
+      area.draw(data, options);
+      return area;
+    }
+    google.setOnLoadCallback(init);
+  </script>
+  
+  
+  <style type="text/css">
+    body {
+      font-family: arial, sans-serif;
+      margin: 0px;
+      padding: 0px;
+    }
+    
+    a {color: #36b;}
+    a.visited {color: #006;}
+    
+    .stats_table {
+      margin: 5px;
+    }
+    
+    td {
+      padding: 5px;
+    }
+
+    th.gradient {
+      height: auto;
+    }
+
+    .stats_table tr:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+    
+    h3 {
+      color: #666;
+    }
+    
+    .masthead {
+      background-color: white;
+      color: rgb(204, 221, 255);
+      height: 80px;
+      width: 100%;
+      padding: 0px;
+    }
+    
+    .main {
+      padding: 10px;
+    }
+    
+    .gradient {
+      background: #333366; /* Old browsers */
+      background: -moz-linear-gradient(left,  #333366 0%, #ffffff 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%,#333366), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(left,  #333366 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(left,  #333366 0%,#ffffff 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(left,  #333366 0%,#ffffff 100%); /* IE10+ */
+      background: linear-gradient(to right,  #333366 0%,#ffffff 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333366', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+      
+      padding: 0px;
+      height: 80px;
+      width: 700px;
+    }
+    
+    .main_content {
+      margin-left: 300px;
+    }
+    
+    .sidemenu {
+      width: 260px;
+      position: fixed;
+      border-style: solid;
+      border-width: 2px;
+      border-color: rgb(51, 51, 102);
+    }
+    
+    .sidemenu_head {
+      width: 250px;
+      background-color: rgb(51, 51, 102);
+      color: rgb(204, 221, 255);
+      padding: 5px;
+    }
+    
+    .sidemenu_body {
+      width: 250px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+<div id="masthead" class="masthead">
+  <div style="float: left; display: inline; padding: 10px; height: 80px;">
+    <a href="http://www.ensembl.org/"><img src="http://static.ensembl.org/i/e-ensembl.png" width="185" height="45" alt="Ensembl"></a>
+  </div>
+  
+  <div style="float: right; display: inline; height: 80px; background: white; padding: 10px;">
+    <a href="http://www.ensembl.org/vep"><img src="http://www.ensembl.org/img/vep_logo.png" width="111" height="50" alt="VEP"></a>
+  </div>
+  <div class="gradient">
+  </div>
+</div>
+<div class="main">
+<div class="sidemenu"><div class="sidemenu_head">Links</div><div class="sidemenu_body"><ul><li><a href="#masthead">Top of page</a></li><li><a href="#run_stats">VEP run statistics</a></li><li><a href="#gen_stats">General statistics</a></li><li><a href="#var_class">Variant classes</a></li><li><a href="#var_cons">Consequences (most severe)</a></li><li><a href="#consequences">Consequences (all)</a></li><li><a href="#coding">Coding consequences</a></li><li><a href="#sift">SIFT summary</a></li><li><a href="#chr">Variants by chromosome</a></li><li><a href="#protein">Position in protein</a></li></ul></div></div><div class='main_content'><h3 id="run_stats">VEP run statistics</h3><table class="stats_table"><tr><td>VEP version (API)</td><td> 111 (111)</td></tr><tr><td>Annotation sources</td><td>Cache: /Users/gayathri/.vep/canis_lupus_familiaris/104_CanFam3.1</td></tr><tr><td>Species</td><td>canis_lupus_familiaris</td></tr><tr><td>Command line options</td><td><pre>--assembly CanFam3.1 --biotype --cache  --cache_version 104 --canonical --dir_cache /Users/gayathri/.vep --force_overwrite --format vcf --input_file /Users/gayathri/rottweiler_pipeline/results/filtered/joint.filtered.nochr.vcf --numbers --offline --output_file /Users/gayathri/rottweiler_pipeline/results/final/joint.filtered.vep.vcf --sift b --species canis_lupus_familiaris --stats_file /Users/gayathri/rottweiler_pipeline/results/final/joint.filtered.vep.stats.html --symbol --vcf</pre></td></tr><tr><td>Start time</td><td>2026-05-31 17:07:16</td></tr><tr><td>End time</td><td>2026-05-31 17:36:38</td></tr><tr><td>Run time</td><td>1762 seconds</td></tr><tr><td>Input file</td><td>/Users/gayathri/rottweiler_pipeline/results/filtered/joint.filtered.nochr.vcf</td></tr><tr><td>Output file</td><td>/Users/gayathri/rottweiler_pipeline/results/final/joint.filtered.vep.vcf</td></tr></table><h3 id="gen_stats">General statistics</h3><table class="stats_table"><tr><td>Lines of input read</td><td>6009297</td></tr><tr><td>Variants processed</td><td>5823339</td></tr><tr><td>Variants filtered out</td><td>0</td></tr><tr><td>Novel / existing variants</td><td>-</td></tr><tr><td>Overlapped genes</td><td>30597</td></tr><tr><td>Overlapped transcripts</td><td>60531</td></tr><tr><td>Overlapped regulatory features</td><td>-</td></tr></table><hr/><h3 id="var_class">Variant classes</h3><div id="var_class_pie" style="width: 800px; height: 200px">&nbsp;</div><div id="var_class_table" style="width: 800px; height: 200px">&nbsp;</div><hr/><h3 id="var_cons">Consequences (most severe)</h3><div id="var_cons_pie" style="width: 800px; height: 400px">&nbsp;</div><div id="var_cons_table" style="width: 800px; height: 200px">&nbsp;</div><hr/><h3 id="consequences">Consequences (all)</h3><div id="consequences_pie" style="width: 800px; height: 400px">&nbsp;</div><div id="consequences_table" style="width: 800px; height: 200px">&nbsp;</div><hr/><h3 id="coding">Coding consequences</h3><div id="coding_pie" style="width: 800px; height: 400px">&nbsp;</div><div id="coding_table" style="width: 800px; height: 200px">&nbsp;</div><hr/><h3 id="sift">SIFT summary</h3><div id="sift_pie" style="width: 800px; height: 200px">&nbsp;</div><div id="sift_table" style="width: 800px; height: 200px">&nbsp;</div><hr/><h3 id="chr">Variants by chromosome</h3><div id="chr_bar" style="width: 800px; height: 200px">&nbsp;</div><div id="chr_table" style="width: 800px; height: 200px">&nbsp;</div><hr/><h3 id="protein">Position in protein</h3><div id="protein_bar" style="width: 800px; height: 200px">&nbsp;</div></div>
+</div></body>
+</html>
