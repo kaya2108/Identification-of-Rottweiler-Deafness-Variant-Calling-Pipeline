@@ -25,7 +25,7 @@ The pipeline successfully reproduces the pathogenic variant reported in the pape
 Without the paper’s private cohort of control genomes for population-level filtering, **41 candidate variants remain**. The **LOXHD1 p.G1914A** variant is present within this final set and has strong supporting evidence.
 
 Additional validation using Polyphen-2 gave a score of 1.000, classified as probably damaging. 
-
+![PolyPhen-2 result for LOXHD1 p.G1914A](results/polyphen-result.webp)
 ------------------------------------------------------------------------
 
 | Field              | Value                        |
