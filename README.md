@@ -8,7 +8,25 @@
 
 ## Final Result
 
-The pipeline successfully reproduces the pathogenic variant reported in the paper:
+The pipeline successfully reproduces the pathogenic variant reported in the paper
+
+## Filtering Results
+
+| Filter | Variants remaining |
+|---|---:|
+| All variants | ~millions |
+| PASS + missense + homozygous `(1/1)` | 3,956 |
+| + SIFT deleterious | 578 |
+| + SIFT score = 0 + minimum 10 reads support | 41 |
+| **Target variant: LOXHD1 p.G1914A** | **Present in the final filtered set** |
+
+------------------------------------------------------------------------
+
+Without the paper’s private cohort of control genomes for population-level filtering, **41 candidate variants remain**. The **LOXHD1 p.G1914A** variant is present within this final set and has strong supporting evidence.
+
+Additional validation using Polyphen-2 gave a score of 1.000, classified as probably damaging. 
+
+------------------------------------------------------------------------
 
 | Field              | Value                        |
 |--------------------|------------------------------|
@@ -82,24 +100,6 @@ Candidate variant filtering
 | Homozygous | Implements the paper’s autosomal recessive inheritance hypothesis. |
 | SIFT deleterious | SIFT predicts whether an amino acid change affects protein function based on evolutionary conservation. A deleterious prediction corresponds to a score ≤ 0.05. A score of 0 means the position is perfectly conserved across species and changing it is predicted to be maximally damaging. |
 | Min 10 reads support | Ensures the variant call is well-supported by sequencing data. Low-depth variants are filtered out. |
-
----
-
-## Filtering Results
-
-| Filter | Variants remaining |
-|---|---:|
-| All variants | ~millions |
-| PASS + missense + homozygous `(1/1)` | 3,956 |
-| + SIFT deleterious | 578 |
-| + SIFT score = 0 + minimum 10 reads support | 41 |
-| **Target variant: LOXHD1 p.G1914A** | **Present in the final filtered set** |
-
----
-
-Without the paper’s private cohort of control genomes for population-level filtering, **41 candidate variants remain**. The **LOXHD1 p.G1914A** variant is present within this final set and has strong supporting evidence.
-
-Additional validation using Polyphen-2 gave a score of 1.000, classified as probably damaging. 
 
 ------------------------------------------------------------------------
 
