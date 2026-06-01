@@ -1,0 +1,22 @@
+# accession ids
+samples:
+  WES: SRR13743383
+  WGS: SRR13743384
+
+# FASTQ input directory
+fastq_dir: /Users/gayathri/rottweiler_pipeline/data/raw
+
+# Output directory
+outdir: /Users/gayathri/rottweiler_pipeline/results
+
+# Reference genome (canFam3)
+ref: /Users/gayathri/rottweiler_pipeline/resources/canFam3.clean.fa
+
+# dbSNP for BQSR
+dbsnp: /Users/gayathri/rottweiler_pipeline/resources/canis_lupus_familiaris.chr.vcf.gz
+
+# VEP cache directory
+vep_cache: /Users/gayathri/.vep
+
+vep_exe: "/Users/gayathri/anaconda3/envs/vep111_x86/share/ensembl-vep-111.0-0/vep"
+vep_perl: "/Users/gayathri/anaconda3/envs/vep111_x86/bin/perl"
